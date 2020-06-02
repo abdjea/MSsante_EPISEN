@@ -1,6 +1,11 @@
 # Mssante_EPISEN
 Bind9,postfix,dovecot,Squirrelmail
-
+ mettre en place un serveur mail sur un système linux
+ domaine local 
+ dns 
+ MTA
+ MTU
+ MUA
 ## Environment setup
 Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-based PackageManagement tool.Furthermore, Squirrelmail required php5 which is more easy to install in the verision 16.04 of ubuntu.
 
@@ -38,3 +43,38 @@ Update the system :
         apt-get upgrade
 
 
+## Service installation
+
+### Serveur DNS
+*bind9
+
+        apt-get intall bind9
+### MTA
+
+*postfix 
+
+        apt-get install bind9
+
+Serveur web :
+
+*apache2
+
+        apt-get install apache2
+        
+*php5.6
+
+        sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+        sudo add-apt-repository ppa:ondrej/php
+        sudo apt-get update
+        sudo apt-get install php5.6
+        sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
+        sudo php -v
+MDA
+*dovecot
+
+        apt-get install dovecot-common
+        apt-get install dovecot-imapd dovecot-pop3d
+MUA :
+*Squirrelmail
+
+        apt-get install squirrelmail
