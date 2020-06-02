@@ -69,12 +69,13 @@ php5.6
         sudo apt-get install php5.6
         sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
         sudo php -v
+        
 ### Mail Delivery Agent
 dovecot
 
         apt-get install dovecot-common
         apt-get install dovecot-imapd dovecot-pop3d
-### Mail tools 
+### Mail-tools 
 
 Mail-tools
 
@@ -85,3 +86,48 @@ Mail-tools
 Squirrelmail
 
         apt-get install squirrelmail
+        
+## Service configuration
+
+### DNS
+
+- Bind 
+
+      cd /etc/bind
+      
+      nano named.conf.local
+      
+      cp db.local db.episen
+      cp db.127 db.192
+      
+      nano db.episen
+      nano db.192
+      
+      invoke-rc.d bind9 restart
+      
+- Configure the DNS of the host 
+      
+      nano /etc/resolv.conf
+      
+      search episen-sante.net
+      servername 192.168.0.1
+
+### MTA
+postfix
+
+       dpkg-reconfigure postfix 
+       
+       Configuration type du serveur de messagerie :               Local uniquement (or Site Internet)
+       Nom de courrier :                                           mail.episen-sante.net
+       destinataire eds courriels de "root" et de "postmaster" :   mail.episen-sante.net, episen-sante.net
+       Réseaux internes :                                          192.168.0.0/24
+       Protocoles internet à utiliser :                            tous
+       
+### MUA
+squirrelmail 
+ 
+       nano /etc/squirremail/apache.cong
+       
+       
+       
+
