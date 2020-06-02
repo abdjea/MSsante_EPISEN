@@ -26,5 +26,15 @@ in the tab "Serveur DHCP" :
 
 
 ### Ubuntu 16.04 LTS
+
+recover the display capabilities of the host on the virtual machine :
+
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+add Virtual Guest Additions
+
+update the system :
+
 apt-get update
 apt-get upgrade
+
+
