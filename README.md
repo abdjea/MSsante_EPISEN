@@ -49,19 +49,19 @@ Update the system :
 *bind9
 
         apt-get intall bind9
-### MTA
+### Mail Transfert Agent
 
-*postfix 
+postfix 
 
         apt-get install bind9
 
-Serveur web :
+### Serveur web :
 
-*apache2
+apache2
 
         apt-get install apache2
         
-*php5.6
+php5.6
 
         sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
         sudo add-apt-repository ppa:ondrej/php
@@ -69,12 +69,19 @@ Serveur web :
         sudo apt-get install php5.6
         sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
         sudo php -v
-MDA
-*dovecot
+### Mail Delivery Agent
+dovecot
 
         apt-get install dovecot-common
         apt-get install dovecot-imapd dovecot-pop3d
-MUA :
-*Squirrelmail
+### Mail tools 
+
+Mail-tools
+
+         apt-get install mailutils
+
+
+### Mail User Agent
+Squirrelmail
 
         apt-get install squirrelmail
