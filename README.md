@@ -27,13 +27,12 @@ in the tab "Serveur DHCP" :
 
 ### Ubuntu 16.04 LTS
 
-recover the display capabilities of the host on the virtual machine :
+Recover the display capabilities of the host on the virtual machine :
 
-sudo apt install build-essential dkms linux-headers-$(uname -r)
+        sudo apt install build-essential dkms linux-headers-$(uname -r)
+        add Virtual Guest Additions # via Vbox windows 
 
-        add Virtual Guest Additions
-
-update the system :
+Update the system :
 
         apt-get update
         apt-get upgrade
