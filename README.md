@@ -11,15 +11,16 @@ Gestinonnaire de réseau hôte > Créer
 in the tab "Interface" :
 
 select "configurer la carte manuellement"
-        @IPv4                 :   192.168.0.100
-        Masque réseau @IPv4   :   255.255.255.0
+        
+        @IPv4                           :   192.168.0.100
+        Masque réseau @IPv4             :   255.255.255.0
         
 in the tab "Serveur DHCP" :
 
-        @IPv4 du serveur      :   192.168.0.100
-        Masque réseau @IPv4   :   255.255.255.0
-        Limite inférieru des @:   192.168.0.1
-        Limite supérieur des @:   192.168.0.10
+        @IPv4 du serveur                :   192.168.0.100
+        Masque réseau @IPv4             :   255.255.255.0
+        Limite inférieur des adresses   :   192.168.0.1
+        Limite supérieur des adresses   :   192.168.0.10
         
  Click on "Apply" to save the current configuration 
 
