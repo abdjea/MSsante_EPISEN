@@ -30,11 +30,12 @@ in the tab "Serveur DHCP" :
 recover the display capabilities of the host on the virtual machine :
 
 sudo apt install build-essential dkms linux-headers-$(uname -r)
-add Virtual Guest Additions
+
+        add Virtual Guest Additions
 
 update the system :
 
-apt-get update
-apt-get upgrade
+        apt-get update
+        apt-get upgrade
 
 
