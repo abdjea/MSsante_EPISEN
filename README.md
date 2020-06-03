@@ -89,7 +89,7 @@ Squirrelmail
         
 ## Service configuration - Way 1 : step by step
 
-Use sudo to root privilege at each command 
+`Use sudo to root privilege at each command`
 
 ### DNS
 
@@ -183,8 +183,13 @@ Use sudo to root privilege at each command
 - `nano /etc/squirremail/apache.conf`
        
        # Uncomment line starting by Documentroot and ServerName to activate the virtual host
-       # Modify webmail.exemple.com by your courrial name "mail.episen-sante.net" at the line ServerName ?
+       # Modify webmail.exemple.com by your courrial name "mail.episen-sante.net" at the line ServerName
        
+       #<VirtualHost 1.2.3.4>
+         DocumentRoot /usr/share/squirrelmail
+         ServerName mail.episen-sante.net
+       #</VirtualHost>
+
 - `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
 
        
