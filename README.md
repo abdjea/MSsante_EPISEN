@@ -1,8 +1,8 @@
 # Mssante_EPISEN
 
-As part of a medical informatics project, we decided to set up an "MSsanté" messaging server meeting health standards in France.
+As part of a medical informatics project, we decided to set up an "MSSanté" messaging server meeting health standards in France.
 
- > MSSanté is an electronic messaging system reserved for healthcare professionals.
+ > "MSSanté" is an electronic messaging system reserved for healthcare professionals.
 
 In this work , we have configured these following network components :
 
@@ -14,7 +14,7 @@ In this work , we have configured these following network components :
 
 
 
- > The MSSanté system consists of a “trusted space” that can be integrated by messaging operators (healthcare establishment, software publisher, administration, etc.) to secure the electronic messaging service they offer to healthcare professionals.
+ > The "MSSanté" system consists of a “trusted space” that can be integrated by messaging operators (healthcare establishment, software publisher, administration, etc.) to secure the electronic messaging service they offer to healthcare professionals.
  
 Work done/to do : 
 
