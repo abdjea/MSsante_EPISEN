@@ -103,7 +103,23 @@ Use sudo to root privilege at each command
       > cp db.127 db.192
       
       > nano db.episen
-      X
+      
+      $TTL	604800
+      @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
+               3		; Serial
+          604800		; Refresh
+           86400		; Retry
+         2419200		; Expire
+          604800 )	; Negative Cache TTL
+      ;
+      @	IN	NS	ns.episen-sante.net.
+      @	IN	A	192.168.0.1
+      ns	IN	A	192.168.0.1
+       IN	MX 10	mail.episen-sante.net.
+      www	IN	CNAME	ns
+      mail	IN	CNAME	ns
+      
+      
       > nano db.192
       X
       
