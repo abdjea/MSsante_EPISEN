@@ -129,7 +129,7 @@ Use sudo to root privilege at each command
       mail	IN	CNAME	ns
       
       
-      > nano db.192
+- `nano db.192`
       
       $TTL	604800
       @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
@@ -142,11 +142,11 @@ Use sudo to root privilege at each command
       @	IN	NS	ns.episen-sante.net.
       1	IN	PTR	ns.episen-sante.net.
       
-      >invoke-rc.d bind9 restart ?
+- `invoke-rc.d bind9 restart`
       
-- Configure the DNS of the host 
+***Configure the DNS of the host*** 
       
-      > nano /etc/resolv.conf
+- `nano /etc/resolv.conf`
       
       #modifiy the content of the file by these lines 
       search episen-sante.net
@@ -154,7 +154,7 @@ Use sudo to root privilege at each command
 
 ### Mail Transfert Agent - Postfix
 
-       > dpkg-reconfigure postfix 
+- `dpkg-reconfigure postfix`
        
        Configuration type du serveur de messagerie :               Local uniquement (or Site Internet) ?
        Nom de courrier :                                           mail.episen-sante.net ?
@@ -162,18 +162,17 @@ Use sudo to root privilege at each command
        Réseaux internes :                                          192.168.0.0/24
        Protocoles internet à utiliser :                            tous
        
-       #add @mail
-       > nano /etc/postfix/main.cf
+
+- `nano /etc/postfix/main.cf`
        
        # Modify the following line by adding the domain name 
        mydestination = episen-sante.net
 
 ### Mail Delivery Agent - Dovecot
 
-      > nano /etc/dovecot.conf
+- `nano /etc/dovecot.conf`
 
       # add the following line at the end of the file 
- 
       protocols = imap pop3
       #disable_plaintext_auth = no
       mail_location = mbox :~/mail :INBOX=/var/mail/%u
@@ -181,12 +180,12 @@ Use sudo to root privilege at each command
  
 ### Mail User Agent - Squirrelmail 
  
-       > nano /etc/squirremail/apache.cong
+- `nano /etc/squirremail/apache.conf`
        
        # Uncomment line starting by Documentroot and ServerName to activate the virtual host
        # Modify webmail.exemple.com by your courrial name "mail.episen-sante.net" at the line ServerName ?
        
-       > cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf
+- `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
 
        
 ## Service Configuration - Way 2 : download setup
