@@ -6,10 +6,10 @@ As part of a medical informatics project, we decided to set up an "MSSanté" mes
 
 In this work , we have configured these following network components :
 
-| Service | Package/value |
-| --- | --- |
-| local domain name | episen-sante.net |
-| DNS  | Bind |
+| Service | Package/value | state |
+| --- | --- | --- |
+| **Domain name** | episen-sante.net | :white_check_mark: |
+| **DNS**  | Bind | :white_check_mark: |
 
 
     - local domain              : episen-sante.net
