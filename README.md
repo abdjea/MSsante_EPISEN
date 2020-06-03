@@ -89,7 +89,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
         apt-get install dovecot-common
         apt-get install dovecot-imapd dovecot-pop3d
-### 2.5 - Mail-tools - Mailutils
+### 2.5 - Mail-tools - Mailutils (optional) 
 
         apt-get install mailutils
 
@@ -206,13 +206,14 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
        
 ## 4 - Service Configuration - Way 2 : download setup
 
-Follow these instructions to configurate in an easy way
+This way of configuration consists to copy/paste exiting files in the system.
 
-See the section 3.2 - Mail Transfer Agent - Postfix
+> Follow the section 3.2 - Mail Transfer Agent - Postfix
 
-download the reposoterie in .rar.
+`Download the reposoterie in .rar`
 
-unrar MSsante_EPISEN
+***in the terminal***
 
-cd MSsante_EPISEN
-cp etc /etc
+    unrar MSsante_EPISEN`
+    cd MSsante_EPISEN`
+    cp etc /etc
