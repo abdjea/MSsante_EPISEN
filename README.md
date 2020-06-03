@@ -6,6 +6,12 @@ As part of a medical informatics project, we decided to set up an "MSSanté" mes
 
 In this work , we have configured these following network components :
 
+| Service | Package/value |
+| --- | --- |
+| local domain name | episen-sante.net |
+| DNS  | Bind |
+
+
     - local domain              : episen-sante.net
     - DNS                       : Bind
     - Mail Tranfert Agent       : Postfix (SMTP)
