@@ -109,8 +109,8 @@ Bind
       };
       
      
-- cp db.local db.episen
-- cp db.127 db.192
+'cp db.local db.episen'
+- 'cp db.127 db.192'
       
 - nano db.episen
       
