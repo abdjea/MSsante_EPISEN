@@ -212,6 +212,7 @@ This way of configuration consists to copy/paste exiting files in the system.
 - Download the reposoterie in .rar
    - ***In the terminal***
 
-    unrar MSsante_EPISEN`
-    cd MSsante_EPISEN`
-    cp etc /etc
+
+           unrar MSsante_EPISEN`
+           cd MSsante_EPISEN`
+           cp etc /etc
