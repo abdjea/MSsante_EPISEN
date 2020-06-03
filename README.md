@@ -43,10 +43,10 @@ Update the system :
         apt-get upgrade
 
 
-## Service installation - Way 1
+## Service installation 
 
 ### Serveur DNS
-*bind9
+bind9
 
         apt-get intall bind9
 ### Mail Transfert Agent
@@ -89,6 +89,8 @@ Squirrelmail
         
 ## Service configuration - Way 1 : step by step
 
+Use sudo to root privilege at each command 
+
 ### DNS
 
 - Bind 
@@ -101,9 +103,11 @@ Squirrelmail
       > cp db.127 db.192
       
       > nano db.episen
+      X
       > nano db.192
+      X
       
-      invoke-rc.d bind9 restart ?
+      >invoke-rc.d bind9 restart ?
       
 - Configure the DNS of the host 
       
