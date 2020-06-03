@@ -6,11 +6,13 @@ As part of a medical informatics project, we decided to set up an "MSSanté" mes
 
 In this work , we have configured these following network components :
 
-| Service | Package/value | state |
-| --- | --- | --- |
+| Service | Package/value | State |
+| :---  | :---:  | :---:  |
 | **Domain name** | episen-sante.net | :white_check_mark: |
-| **DNS**  | Bind | :white_check_mark: |
-
+| **DNS**  | Bind9 | :white_check_mark: |
+| **Mail Tranfert Agent**  | Postfix (SMTP)| :white_check_mark: |
+| **Mail Delevery agent**  | Dovecot (IMAP, POP3) | :white_check_mark: |
+| **Mail User Agent**  | Squirrelmail | :white_check_mark: |
 
     - local domain              : episen-sante.net
     - DNS                       : Bind
