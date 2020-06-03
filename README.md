@@ -50,12 +50,12 @@ in the tab "Serveur DHCP" :
 
 ### Ubuntu 16.04 LTS
 
-Recover the display capabilities of the host on the virtual machine :
+***Recover the display capabilities of the host on the virtual machine***
 
         sudo apt install build-essential dkms linux-headers-$(uname -r)
         add Virtual Guest Additions # via Vbox windows 
 
-Update the system :
+***Update the system***
 
         apt-get update
         apt-get upgrade
@@ -63,23 +63,20 @@ Update the system :
 
 ## Service installation 
 
-### Serveur DNS
-bind9
+### Serveur DNS - Bind9
 
         apt-get intall bind9
-### Mail Transfert Agent
-
-postfix 
+### Mail Transfert Agent - Postfix 
 
         apt-get install bind9
 
-### Serveur web :
+### Serveur web
 
-apache2
+***apache2***
 
         apt-get install apache2
         
-php5.6
+***php5.6***
 
         sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
         sudo add-apt-repository ppa:ondrej/php
@@ -88,20 +85,16 @@ php5.6
         sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
         sudo php -v
         
-### Mail Delivery Agent
-dovecot
+### Mail Delivery Agent - Dovecot
 
         apt-get install dovecot-common
         apt-get install dovecot-imapd dovecot-pop3d
-### Mail-tools 
-
-Mail-tools
+### Mail-tools - Mailutils
 
         apt-get install mailutils
 
 
-### Mail User Agent
-Squirrelmail
+### Mail User Agent - Squirrelmail
 
         apt-get install squirrelmail
         
