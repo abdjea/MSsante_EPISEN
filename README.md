@@ -1,11 +1,20 @@
 # Mssante_EPISEN
-Bind9,postfix,dovecot,Squirrelmail
  mettre en place un serveur mail sur un système linux
  domaine local 
  dns 
  MTA
- MTU
+ MDA
  MUA
+ > MSSanté est un système de messageries électroniques réservé aux professionnels de santé.
+
+In this work , we have configured :
+
+local domain              : [x] episen-sante.net
+DNS                       : -[x] Bind
+Mail Tranfert Agent       : [ ]Postfix (SMTP)
+Mail Delevery agent       : Dovecot (IMAP, POP3)
+Mail User Agent - Webmail : Squirrelmail
+
  > Le système MSSanté consiste en un « espace de confiance » que peuvent intégrer des opérateurs de messageries (établissement de santé, éditeur de logiciel, administration…) pour sécuriser le service de messagerie électronique qu'ils proposent aux professionnels de santé.
 ## Environment setup
 Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-based PackageManagement tool.Furthermore, Squirrelmail required php5 which is more easy to install in the verision 16.04 of ubuntu.
