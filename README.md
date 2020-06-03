@@ -43,7 +43,7 @@ Update the system :
         apt-get upgrade
 
 
-## Service installation
+## Service installation - Way 1
 
 ### Serveur DNS
 *bind9
@@ -103,7 +103,7 @@ Squirrelmail
       nano db.episen
       nano db.192
       
-      invoke-rc.d bind9 restart
+      invoke-rc.d bind9 restart ?
       
 - Configure the DNS of the host 
       
@@ -112,22 +112,46 @@ Squirrelmail
       search episen-sante.net
       servername 192.168.0.1
 
-### MTA
+### Mail Transfert Agent
+
 postfix
 
        dpkg-reconfigure postfix 
        
-       Configuration type du serveur de messagerie :               Local uniquement (or Site Internet)
-       Nom de courrier :                                           mail.episen-sante.net
+       Configuration type du serveur de messagerie :               Local uniquement (or Site Internet) ?
+       Nom de courrier :                                           mail.episen-sante.net ?
        destinataire eds courriels de "root" et de "postmaster" :   mail.episen-sante.net, episen-sante.net
        Réseaux internes :                                          192.168.0.0/24
        Protocoles internet à utiliser :                            tous
        
-### MUA
+       
+       out of 
+       
+       postfix
+       /etc/postfix/main.cf - @mail 
+       mydestination = episen-sante.net
+
+### Mail Delivery Agent
+
+>nano /etc/dovecot.conf
+ add at the end of the file :
+ 
+      protocols = imap pop3
+      #disable_plaintext_auth = no
+      mail_location = mbox :~/mail :INBOX=/var/mail/%u
+      #mail_location = maildir :~/Maildir
+ 
+### Mail User Agent
 squirrelmail 
  
-       nano /etc/squirremail/apache.cong
+       >nano /etc/squirremail/apache.cong
        
+       uncomment line starting by Documentroot and ServerName
+       modify webmail.exemple.com by your courrial name
        
+       cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf
+
        
+## Service installation - Way 2
+
 
