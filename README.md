@@ -208,13 +208,9 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 This way of configuration consists to copy/paste exiting files in the system.
 
-1. James Madison
-2. James Monroe
-3. John Quincy Adam
-
-1. Follow the section 3.2 - Mail Transfer Agent - Postfix
-2. Download the reposoterie in .rar
-   - ***in the terminal***
+- Follow the section `3.2 - Mail Transfer Agent - Postfix`
+- Download the reposoterie in .rar
+   - ***In the terminal***
 
     unrar MSsante_EPISEN`
     cd MSsante_EPISEN`
