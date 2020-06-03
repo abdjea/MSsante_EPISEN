@@ -93,16 +93,26 @@ Use sudo to root privilege at each command
 
 ### DNS
 
-- Bind 
+Bind 
 
-      > cd /etc/bind
+- cd /etc/bind
       
-      > nano named.conf.local
+- nano named.conf.local
       
-      > cp db.local db.episen
-      > cp db.127 db.192
+       zone "episen-sante.net" {
+       type master;
+       file "/etc/bind/db.episen";
+      };
+      zone "0.168.192.in-addr.arpa" {
+       type master;
+       file "/etc/bind/db.192";
+      };
       
-      > nano db.episen
+     
+- cp db.local db.episen
+- cp db.127 db.192
+      
+- nano db.episen
       
       $TTL	604800
       @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
