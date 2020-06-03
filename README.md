@@ -121,7 +121,17 @@ Use sudo to root privilege at each command
       
       
       > nano db.192
-      X
+      
+      $TTL	604800
+      @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
+               2		; Serial
+          604800		; Refresh
+           86400		; Retry
+         2419200		; Expire
+          604800 )	; Negative Cache TTL
+      ;
+      @	IN	NS	ns.episen-sante.net.
+      1	IN	PTR	ns.episen-sante.net.
       
       >invoke-rc.d bind9 restart ?
       
