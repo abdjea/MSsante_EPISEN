@@ -15,6 +15,7 @@ In this work , we have configured these following network components :
 | **Mail User Agent**  | Squirrelmail | :white_check_mark: |
 
 
+
  > The "MSSanté" system consists of a “trusted space” that can be integrated by messaging operators (healthcare establishment, software publisher, administration, etc.) to secure the electronic messaging service they offer to healthcare professionals.
  
 Work done/to do : 
