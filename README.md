@@ -9,11 +9,11 @@
 
 In this work , we have configured :
 
-local domain              : :white_check_mark: episen-sante.net
-DNS                       : :white_check_mark: Bind
-Mail Tranfert Agent       : :white_check_mark: Postfix (SMTP)
-Mail Delevery agent       : Dovecot (IMAP, POP3)
-Mail User Agent - Webmail : Squirrelmail
+- local domain              : :white_check_mark: episen-sante.net
+- DNS                       : :white_check_mark: Bind
+- Mail Tranfert Agent       : :white_check_mark: Postfix (SMTP)
+- Mail Delevery agent       : :white_check_mark: Dovecot (IMAP, POP3)
+- Mail User Agent - Webmail : :white_check_mark: Squirrelmail
 
 - [x] Finish my changes
 - [ ] Push my commits to GitHub
