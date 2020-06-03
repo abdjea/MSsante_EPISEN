@@ -87,7 +87,7 @@ Squirrelmail
 
         apt-get install squirrelmail
         
-## Service configuration
+## Service configuration - Way 1 : step by step
 
 ### DNS
 
@@ -144,7 +144,7 @@ postfix
 ### Mail User Agent
 squirrelmail 
  
-       >nano /etc/squirremail/apache.cong
+       nano /etc/squirremail/apache.cong
        
        uncomment line starting by Documentroot and ServerName
        modify webmail.exemple.com by your courrial name
@@ -152,6 +152,6 @@ squirrelmail
        cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf
 
        
-## Service installation - Way 2
+## Service Configuration - Way 2 : download setup
 
 
