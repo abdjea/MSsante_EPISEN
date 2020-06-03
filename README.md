@@ -24,10 +24,10 @@ Work done/to do :
 - [ ] Bring the application into compliance
  
 
-## Environment setup
+## 1 - Environment setup
 Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-based PackageManagement tool.Furthermore, Squirrelmail required php5 which is more easy to install in the verision 16.04 of ubuntu.
 
-### Virtualbox Network configuration
+### 1.1 - Virtualbox Network configuration
 
 Gestinonnaire de réseau hôte > Créer 
 
@@ -48,7 +48,7 @@ in the tab "Serveur DHCP" :
  Click on "Apply" to save the current configuration 
 
 
-### Ubuntu 16.04 LTS
+### 1.2 - Ubuntu 16.04 LTS
 
 ***Recover the display capabilities of the host on the virtual machine***
 
