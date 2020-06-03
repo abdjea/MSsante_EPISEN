@@ -29,28 +29,28 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 ### 1.1 - Virtualbox Network configuration
 
-Gestinonnaire de réseau hôte > Créer 
+- `Host Network Manager > Create`
 
-in the tab "Interface" :
+***in the tab "Interface"***
 
-select "configurer la carte manuellement"
+- `select "configurer la carte manuellement"`
         
         @IPv4                           :   192.168.0.100
         Masque réseau @IPv4             :   255.255.255.0
         
-in the tab "Serveur DHCP" :
+***in the tab "DHCP Server"***
 
         @IPv4 du serveur                :   192.168.0.100
         Masque réseau @IPv4             :   255.255.255.0
         Limite inférieur des adresses   :   192.168.0.1
         Limite supérieur des adresses   :   192.168.0.10
         
- Click on "Apply" to save the current configuration 
+ - `Click on "Apply" to save the current configuration`
 
 
 ### 1.2 - Ubuntu 16.04 LTS
 
-***Recover the display capabilities of the host on the virtual machine***
+***Recover the display capabilities of  the virtual machine on the host***
 
         sudo apt install build-essential dkms linux-headers-$(uname -r)
         add Virtual Guest Additions # via Vbox windows 
