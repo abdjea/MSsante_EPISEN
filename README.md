@@ -98,7 +98,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
         apt-get install squirrelmail
         
-## 3 - Service configuration - Way 1 : step by step
+## 3 - Service configuration - Way 1 : Step by step (Verified)
 
 `Use sudo to root privilege at each command`
 
@@ -204,7 +204,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 - `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
 
        
-## 4 - Service Configuration - Way 2 : download setup
+## 4 - Service Configuration - Way 2 : Download setup (Not verified)
 
 This way of configuration consists to copy/paste exiting files in the system.
 
