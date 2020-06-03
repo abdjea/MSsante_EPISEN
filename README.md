@@ -2,7 +2,7 @@
 
 As part of a medical informatics project, we decided to set up an "MSsanté" messaging server meeting health standards in France.
 
- > MSSanté est un système de messageries électroniques réservé aux professionnels de santé.
+ > MSSanté is an electronic messaging system reserved for healthcare professionals.
 
 In this work , we have configured these following network components :
 
@@ -14,7 +14,7 @@ In this work , we have configured these following network components :
 
 
 
- > Le système MSSanté consiste en un « espace de confiance » que peuvent intégrer des opérateurs de messageries (établissement de santé, éditeur de logiciel, administration…) pour sécuriser le service de messagerie électronique qu'ils proposent aux professionnels de santé.
+ > The MSSanté system consists of a “trusted space” that can be integrated by messaging operators (healthcare establishment, software publisher, administration, etc.) to secure the electronic messaging service they offer to healthcare professionals.
  
 Work done/to do : 
 
