@@ -16,10 +16,10 @@ In this work , we have configured these following network components :
 
  > Le système MSSanté consiste en un « espace de confiance » que peuvent intégrer des opérateurs de messageries (établissement de santé, éditeur de logiciel, administration…) pour sécuriser le service de messagerie électronique qu'ils proposent aux professionnels de santé.
  
-Work done adn to do : 
+Work done/to do : 
 
 - [x] Paramount service configured
-- [ ] Set the standard
+- [ ] Bring the application into compliance
  
 
 ## Environment setup
