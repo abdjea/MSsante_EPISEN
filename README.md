@@ -209,7 +209,6 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 This way of configuration consists to copy/paste exiting files in the system.
 
 1. Follow the section 3.2 - Mail Transfer Agent - Postfix
-
 2. Download the reposoterie in .rar
    - ***in the terminal***
 
