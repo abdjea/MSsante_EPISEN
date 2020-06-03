@@ -93,7 +93,7 @@ Use sudo to root privilege at each command
 
 ### DNS
 
-***Bind ***
+***Bind***
 
 - `cd /etc/bind`
       
