@@ -9,9 +9,9 @@
 
 In this work , we have configured :
 
-local domain              : [x] episen-sante.net
-DNS                       : -[x] Bind
-Mail Tranfert Agent       : [ ]Postfix (SMTP)
+local domain              : :white_check_mark: episen-sante.net
+DNS                       : :white_check_mark: Bind
+Mail Tranfert Agent       : :white_check_mark: Postfix (SMTP)
 Mail Delevery agent       : Dovecot (IMAP, POP3)
 Mail User Agent - Webmail : Squirrelmail
 
