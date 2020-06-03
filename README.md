@@ -29,11 +29,11 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 ### 1.1 - Virtualbox Network configuration
 
-- `Host Network Manager > Create`
+- `Click on "Host Network Manager > Create"`
 
 ***in the tab "Interface"***
 
-- `select "configurer la carte manuellement"`
+- `Select the case "configure the card manually"`
         
         @IPv4                           :   192.168.0.100
         Masque réseau @IPv4             :   255.255.255.0
@@ -61,16 +61,16 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
         apt-get upgrade
 
 
-## Service installation 
+## 2 - Service installation 
 
-### Serveur DNS - Bind9
+### 2.1 - Serveur DNS - Bind9
 
         apt-get intall bind9
-### Mail Transfert Agent - Postfix 
+### 2.2 - Mail Transfert Agent - Postfix 
 
         apt-get install bind9
 
-### Serveur web
+### 2.3 - Serveur web
 
 ***apache2***
 
@@ -85,24 +85,24 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
         sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
         sudo php -v
         
-### Mail Delivery Agent - Dovecot
+### 2.4 - Mail Delivery Agent - Dovecot
 
         apt-get install dovecot-common
         apt-get install dovecot-imapd dovecot-pop3d
-### Mail-tools - Mailutils
+### 2.5 - Mail-tools - Mailutils
 
         apt-get install mailutils
 
 
-### Mail User Agent - Squirrelmail
+### 2.6 - Mail User Agent - Squirrelmail
 
         apt-get install squirrelmail
         
-## Service configuration - Way 1 : step by step
+## 3 - Service configuration - Way 1 : step by step
 
 `Use sudo to root privilege at each command`
 
-### DNS
+### 3.1 - DNS
 
 ***Bind***
 
@@ -163,7 +163,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
       search episen-sante.net
       servername 192.168.0.1
 
-### Mail Transfert Agent - Postfix
+### 3.2 - Mail Transfert Agent - Postfix
 
 - `dpkg-reconfigure postfix`
        
@@ -179,7 +179,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
        # Modify the following line by adding the domain name 
        mydestination = episen-sante.net
 
-### Mail Delivery Agent - Dovecot
+### 3.3 - Mail Delivery Agent - Dovecot
 
 - `nano /etc/dovecot.conf`
 
@@ -189,7 +189,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
       mail_location = mbox :~/mail :INBOX=/var/mail/%u
       #mail_location = maildir :~/Maildir
  
-### Mail User Agent - Squirrelmail 
+### 3.4 - Mail User Agent - Squirrelmail 
  
 - `nano /etc/squirremail/apache.conf`
        
@@ -204,6 +204,15 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 - `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
 
        
-## Service Configuration - Way 2 : download setup
+## 4 - Service Configuration - Way 2 : download setup
 
+Follow these instructions to configurate in an easy way
 
+See the section 3.2 - Mail Transfer Agent - Postfix
+
+download the reposoterie in .rar.
+
+unrar MSsante_EPISEN
+
+cd MSsante_EPISEN
+cp etc /etc
