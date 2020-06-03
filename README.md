@@ -6,6 +6,7 @@ Bind9,postfix,dovecot,Squirrelmail
  MTA
  MTU
  MUA
+ > Le système MSSanté consiste en un « espace de confiance » que peuvent intégrer des opérateurs de messageries (établissement de santé, éditeur de logiciel, administration…) pour sécuriser le service de messagerie électronique qu'ils proposent aux professionnels de santé.
 ## Environment setup
 Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-based PackageManagement tool.Furthermore, Squirrelmail required php5 which is more easy to install in the verision 16.04 of ubuntu.
 
