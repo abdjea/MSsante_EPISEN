@@ -1,4 +1,4 @@
-# Mssante_EPISEN
+# MSsante_EPISEN
 
 As part of a medical informatics project, we decided to set up an "MSSanté" messaging server meeting health standards in France.
 
@@ -218,8 +218,8 @@ This way of configuration consists to copy/paste exiting files in the system.
    - ***In the terminal***
 
 
-           unrar MSsante_EPISEN`
-           cd MSsante_EPISEN`
+           unrar MSsante_EPISEN.rar
+           cd MSsante_EPISEN.rar
            cp etc /etc
 ## 5 - Utilisation
 
