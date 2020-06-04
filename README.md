@@ -207,7 +207,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
        #</VirtualHost>
 
 - `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
-
+- `a2ensite squirrelmail.conf`
        
 ## 4 - Service Configuration - Way 2 : Download setup (Not verified)
 
