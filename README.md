@@ -52,7 +52,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 ***Recover the display capabilities of  the virtual machine on the host***
 
-```shell
+```console
 etudiant@ubuntu64:~$ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 ```
