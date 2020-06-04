@@ -62,7 +62,7 @@ etudiant@ubuntu64:~$ sudo apt install build-essential dkms linux-headers-$(uname
 
 ***Update the system***
 
-```shell
+```console
 etudiant@ubuntu64:~$ sudo apt-get update
 etudiant@ubuntu64:~$ sudo apt-get upgrade
 ```        
