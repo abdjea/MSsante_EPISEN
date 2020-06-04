@@ -232,7 +232,7 @@ This way of configuration consists to copy/paste exiting files in the system.
 - Add an new user : `sudo adduser XX` (XX : new account name)
 
 ***Join a domain for the first time***
-- when to join :
+- When to join :
   - if you add an new host 
   - if you restart the host (or `sudo service network-manager stop`)
   
