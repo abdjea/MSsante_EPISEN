@@ -1,4 +1,4 @@
-# Mssante_EPISEN
+# MSsante_EPISEN
 
 As part of a medical informatics project, we decided to set up an "MSSanté" messaging server meeting health standards in France.
 
@@ -24,62 +24,67 @@ Work done/to do :
 - [ ] Bring the application into compliance
  
 
-## Environment setup
+## 1 - Environment setup
 Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-based PackageManagement tool.Furthermore, Squirrelmail required php5 which is more easy to install in the verision 16.04 of ubuntu.
 
-### Virtualbox Network configuration
+### 1.1 - Virtualbox Network configuration
 
-Gestinonnaire de réseau hôte > Créer 
+- `Click on "Host Network Manager > Create"`
 
-in the tab "Interface" :
+***in the tab "Interface"***
 
-select "configurer la carte manuellement"
+- `Select the case "configure the card manually"`
         
         @IPv4                           :   192.168.0.100
         Masque réseau @IPv4             :   255.255.255.0
         
-in the tab "Serveur DHCP" :
+***in the tab "DHCP Server"***
 
         @IPv4 du serveur                :   192.168.0.100
         Masque réseau @IPv4             :   255.255.255.0
         Limite inférieur des adresses   :   192.168.0.1
         Limite supérieur des adresses   :   192.168.0.10
         
- Click on "Apply" to save the current configuration 
+ - `Click on "Apply" to save the current configuration`
 
 
-### Ubuntu 16.04 LTS
+### 1.2 - Ubuntu 16.04 LTS
 
-Recover the display capabilities of the host on the virtual machine :
+***Recover the display capabilities of  the virtual machine on the host***
 
-        sudo apt install build-essential dkms linux-headers-$(uname -r)
-        add Virtual Guest Additions # via Vbox windows 
+```console
+etudiant@ubuntu64:~$ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
-Update the system :
-
-        apt-get update
-        apt-get upgrade
+```
 
 
-## Service installation 
+- `add Virtual Guest Additions # via Vbox windows`
 
-### Serveur DNS
-bind9
+***Update the system***
 
-        apt-get intall bind9
-### Mail Transfert Agent
-
-postfix 
-
-        apt-get install bind9
-
-### Serveur web :
-
-apache2
-
-        apt-get install apache2
+```console
+etudiant@ubuntu64:~$ sudo apt-get update
+etudiant@ubuntu64:~$ sudo apt-get upgrade
+```        
         
-php5.6
+
+
+## 2 - Service installation 
+
+### 2.1 - Serveur DNS - Bind9
+
+        sudo apt-get intall bind9
+### 2.2 - Mail Transfert Agent - Postfix 
+
+        sudo apt-get install bind9
+
+### 2.3 - Serveur web
+
+***apache2***
+
+        sudo apt-get install apache2
+        
+***php5.6***
 
         sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
         sudo add-apt-repository ppa:ondrej/php
@@ -88,34 +93,28 @@ php5.6
         sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
         sudo php -v
         
-### Mail Delivery Agent
-dovecot
+### 2.4 - Mail Delivery Agent - Dovecot
 
-        apt-get install dovecot-common
-        apt-get install dovecot-imapd dovecot-pop3d
-### Mail-tools 
+        sudo apt-get install dovecot-common
+        sudo apt-get install dovecot-imapd dovecot-pop3d
+### 2.5 - Mail-tools - Mailutils (optional) 
 
-Mail-tools
-
-        apt-get install mailutils
+        sudo apt-get install mailutils
 
 
-### Mail User Agent
-Squirrelmail
+### 2.6 - Mail User Agent - Squirrelmail
 
-        apt-get install squirrelmail
+        sudo apt-get install squirrelmail
         
-## Service configuration - Way 1 : step by step
+## 3 - Service configuration - Way 1 : Step by step (Verified)
 
-`Use sudo to root privilege at each command`
-
-### DNS
+### 3.1 - DNS
 
 ***Bind***
 
-- `cd /etc/bind`
+- `sudo cd /etc/bind`
       
-- `nano named.conf.local`
+- `sudo nano named.conf.local`
       
        zone "episen-sante.net" {
        type master;
@@ -127,9 +126,9 @@ Squirrelmail
       };
       
      
-- `cp db.local db.episen`
-- `cp db.127 db.192`     
-- `nano db.episen`
+- `sudo cp db.local db.episen`
+- `sudo cp db.127 db.192`     
+- `sudo nano db.episen`
       
       $TTL	604800
       @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
@@ -147,7 +146,7 @@ Squirrelmail
       mail	IN	CNAME	ns
       
       
-- `nano db.192`
+- `sudo nano db.192`
       
       $TTL	604800
       @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
@@ -160,35 +159,40 @@ Squirrelmail
       @	IN	NS	ns.episen-sante.net.
       1	IN	PTR	ns.episen-sante.net.
       
-- `invoke-rc.d bind9 restart`
+- `sudo invoke-rc.d bind9 restart`
       
 ***Configure the DNS of the host*** 
       
-- `nano /etc/resolv.conf`
+- `sudo nano /etc/resolv.conf`
       
       #modifiy the content of the file by these lines 
       search episen-sante.net
       servername 192.168.0.1
 
-### Mail Transfert Agent - Postfix
+### 3.2 - Mail Transfert Agent - Postfix
 
-- `dpkg-reconfigure postfix`
+- `sudo dpkg-reconfigure postfix`
        
-       Configuration type du serveur de messagerie :               Local uniquement (or Site Internet) ?
-       Nom de courrier :                                           mail.episen-sante.net ?
-       destinataire eds courriels de "root" et de "postmaster" :   mail.episen-sante.net, episen-sante.net
-       Réseaux internes :                                          192.168.0.0/24
-       Protocoles internet à utiliser :                            tous
+       Configuration type du serveur de messagerie                 :           Site Internet
+       Nom de courrier                                             :           episen-sante.net 
+       destinataire des courriels de "root" et de "postmaster"     :           mail.episen-sante.net, episen-sante.net
+       Autres destinations pour lesquelles le courier ser accepté  :           episen-sante.net
+       Faut-il forcer les mise à jour synchronisées de la file
+       d'attente des courriels                                     :           Non
+       Réseaux internes                                            :           192.168.0.0/24
+       Taille maximale des boites aux lettres                      :           0
+       Caractère d'extension des addresses locales                 :           (champ vide)
+       Protocoles internet à utiliser                              :           Tous
        
 
-- `nano /etc/postfix/main.cf`
+- `sudo nano /etc/postfix/main.cf`
        
        # Modify the following line by adding the domain name 
        mydestination = episen-sante.net
 
-### Mail Delivery Agent - Dovecot
+### 3.3 - Mail Delivery Agent - Dovecot
 
-- `nano /etc/dovecot.conf`
+- `sudo nano /etc/dovecot.conf`
 
       # add the following line at the end of the file 
       protocols = imap pop3
@@ -196,9 +200,9 @@ Squirrelmail
       mail_location = mbox :~/mail :INBOX=/var/mail/%u
       #mail_location = maildir :~/Maildir
  
-### Mail User Agent - Squirrelmail 
+### 3.4 - Mail User Agent and Web Server - Squirrelmail and Apache2
  
-- `nano /etc/squirremail/apache.conf`
+- `sudo nano /etc/squirremail/apache.conf`
        
        # Uncomment line starting by Documentroot and ServerName to activate the virtual host
        # Modify webmail.exemple.com by your courrial name "mail.episen-sante.net" at the line ServerName
@@ -208,9 +212,39 @@ Squirrelmail
          ServerName mail.episen-sante.net
        #</VirtualHost>
 
-- `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
-
+- `sudo cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
+- `sudo a2ensite squirrelmail.conf`
        
-## Service Configuration - Way 2 : download setup
+## 4 - Service Configuration - Way 2 : Download setup (Not verified)
+
+This way of configuration consists to copy/paste exiting files in the system.
+
+- Follow the section `3.2 - Mail Transfer Agent - Postfix`
+- Download the reposoterie in .rar
+   - ***In the terminal***
 
 
+           unrar MSsante_EPISEN.rar
+           cd MSsante_EPISEN.rar
+           cp etc /etc
+## 5 - How to use ...
+
+***Portail d'authentification***
+
+- Type in the address bar of your browser the domain name concanate to the Squirrellmail path : `episen-sante.net/squirrelmail`
+
+***Create an new email account***
+
+- Add an new user : `sudo adduser XX` (XX : new account name)
+
+***Join a domain for the first time***
+- When to join :
+  - if you add an new host 
+  - if you restart the host (or `sudo service network-manager stop`)
+  
+- Follow the section `3.1 - DNS - Configure the DNS of the host`
+
+## Authors
+
+* **Abhishek DJEACHANDRANE** - *Initial work - Medical informatics engineer* - [abdjea](https://github.com/abdjea)
+* **Anais Bechu** - *Initial work - e-Health firmware engineer* - [AnaisB29](https://github.com/AnaisB29)
