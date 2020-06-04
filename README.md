@@ -221,3 +221,13 @@ This way of configuration consists to copy/paste exiting files in the system.
            unrar MSsante_EPISEN`
            cd MSsante_EPISEN`
            cp etc /etc
+## 5 - Utilisation
+
+Portail d'authentification 
+
+Type in the address bar of your browser the domain name concanate to the Squirrellmail path : `episen-sante.net/squirrelmail`
+
+Create an new email account
+
+add an new user : `adduser XX` (XX : new account name)
+
