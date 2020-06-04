@@ -246,5 +246,5 @@ This way of configuration consists to copy/paste exiting files in the system.
 
 ## Authors
 
-* **Abhishek DJEACHANDRANE** - *Initial work - Medical Informatics Engineer * - [abdjea](https://github.com/abdjea)
-* **Anais Bechu** - *Initial work - e-Health firmware engineer * - [AnaisB29](https://github.com/AnaisB29)
+* **Abhishek DJEACHANDRANE** - *Initial work - Medical Informatics Engineer* - [abdjea](https://github.com/abdjea)
+* **Anais Bechu** - *Initial work - e-Health firmware engineer* - [AnaisB29](https://github.com/AnaisB29)
