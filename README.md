@@ -194,7 +194,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
       mail_location = mbox :~/mail :INBOX=/var/mail/%u
       #mail_location = maildir :~/Maildir
  
-### 3.4 - Mail User Agent - Squirrelmail 
+### 3.4 - Mail User Agent and Web Server - Squirrelmail and Apache2
  
 - `nano /etc/squirremail/apache.conf`
        
