@@ -227,7 +227,7 @@ This way of configuration consists to copy/paste exiting files in the system.
            unrar MSsante_EPISEN.rar
            cd MSsante_EPISEN.rar
            cp etc /etc
-## 5 - Utilisation
+## 5 - How to use ...
 
 ***Portail d'authentification***
 
