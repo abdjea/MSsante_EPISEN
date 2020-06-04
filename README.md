@@ -51,18 +51,22 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 ### 1.2 - Ubuntu 16.04 LTS
 
 ***Recover the display capabilities of  the virtual machine on the host***
+
 ```shell
-ifconfig eth0
+etudiant@ubuntu64:~$ sudo apt install build-essential dkms linux-headers-$(uname -r)
+
 ```
 
 
-        sudo apt install build-essential dkms linux-headers-$(uname -r)
 - `add Virtual Guest Additions # via Vbox windows`
 
 ***Update the system***
 
-        sudo apt-get update
-        sudo apt-get upgrade
+```shell
+etudiant@ubuntu64:~$ sudo apt-get update
+etudiant@ubuntu64:~$ sudo apt-get upgrade
+```        
+        
 
 
 ## 2 - Service installation 
