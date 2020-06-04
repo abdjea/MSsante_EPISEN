@@ -108,8 +108,6 @@ etudiant@ubuntu64:~$ sudo apt-get upgrade
         
 ## 3 - Service configuration - Way 1 : Step by step (Verified)
 
-`Use sudo to root privilege at each command`
-
 ### 3.1 - DNS
 
 ***Bind***
