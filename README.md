@@ -53,28 +53,28 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 ***Recover the display capabilities of  the virtual machine on the host***
 
         sudo apt install build-essential dkms linux-headers-$(uname -r)
-        add Virtual Guest Additions # via Vbox windows 
+- `add Virtual Guest Additions # via Vbox windows`
 
 ***Update the system***
 
-        apt-get update
-        apt-get upgrade
+        sudo apt-get update
+        sudo apt-get upgrade
 
 
 ## 2 - Service installation 
 
 ### 2.1 - Serveur DNS - Bind9
 
-        apt-get intall bind9
+        sudo apt-get intall bind9
 ### 2.2 - Mail Transfert Agent - Postfix 
 
-        apt-get install bind9
+        sudo apt-get install bind9
 
 ### 2.3 - Serveur web
 
 ***apache2***
 
-        apt-get install apache2
+        sudo apt-get install apache2
         
 ***php5.6***
 
@@ -87,16 +87,16 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
         
 ### 2.4 - Mail Delivery Agent - Dovecot
 
-        apt-get install dovecot-common
-        apt-get install dovecot-imapd dovecot-pop3d
+        sudo apt-get install dovecot-common
+        sudo apt-get install dovecot-imapd dovecot-pop3d
 ### 2.5 - Mail-tools - Mailutils (optional) 
 
-        apt-get install mailutils
+        sudo apt-get install mailutils
 
 
 ### 2.6 - Mail User Agent - Squirrelmail
 
-        apt-get install squirrelmail
+        sudo apt-get install squirrelmail
         
 ## 3 - Service configuration - Way 1 : Step by step (Verified)
 
@@ -106,9 +106,9 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 ***Bind***
 
-- `cd /etc/bind`
+- `sudo cd /etc/bind`
       
-- `nano named.conf.local`
+- `sudo nano named.conf.local`
       
        zone "episen-sante.net" {
        type master;
@@ -120,9 +120,9 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
       };
       
      
-- `cp db.local db.episen`
-- `cp db.127 db.192`     
-- `nano db.episen`
+- `sudo cp db.local db.episen`
+- `sudo cp db.127 db.192`     
+- `sudo nano db.episen`
       
       $TTL	604800
       @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
@@ -140,7 +140,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
       mail	IN	CNAME	ns
       
       
-- `nano db.192`
+- `sudo nano db.192`
       
       $TTL	604800
       @	IN	SOA	ns.episen-sante.net. root.episen-sante.net. (
@@ -153,11 +153,11 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
       @	IN	NS	ns.episen-sante.net.
       1	IN	PTR	ns.episen-sante.net.
       
-- `invoke-rc.d bind9 restart`
+- `sudo invoke-rc.d bind9 restart`
       
 ***Configure the DNS of the host*** 
       
-- `nano /etc/resolv.conf`
+- `sudo nano /etc/resolv.conf`
       
       #modifiy the content of the file by these lines 
       search episen-sante.net
@@ -165,7 +165,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 ### 3.2 - Mail Transfert Agent - Postfix
 
-- `dpkg-reconfigure postfix`
+- `sudo dpkg-reconfigure postfix`
        
        Configuration type du serveur de messagerie                 :           Site Internet
        Nom de courrier                                             :           episen-sante.net 
@@ -179,14 +179,14 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
        Protocoles internet à utiliser                              :           Tous
        
 
-- `nano /etc/postfix/main.cf`
+- `sudo nano /etc/postfix/main.cf`
        
        # Modify the following line by adding the domain name 
        mydestination = episen-sante.net
 
 ### 3.3 - Mail Delivery Agent - Dovecot
 
-- `nano /etc/dovecot.conf`
+- `sudo nano /etc/dovecot.conf`
 
       # add the following line at the end of the file 
       protocols = imap pop3
@@ -196,7 +196,7 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
  
 ### 3.4 - Mail User Agent and Web Server - Squirrelmail and Apache2
  
-- `nano /etc/squirremail/apache.conf`
+- `sudo nano /etc/squirremail/apache.conf`
        
        # Uncomment line starting by Documentroot and ServerName to activate the virtual host
        # Modify webmail.exemple.com by your courrial name "mail.episen-sante.net" at the line ServerName
@@ -206,8 +206,8 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
          ServerName mail.episen-sante.net
        #</VirtualHost>
 
-- `cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
-- `a2ensite squirrelmail.conf`
+- `sudo cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`
+- `sudo a2ensite squirrelmail.conf`
        
 ## 4 - Service Configuration - Way 2 : Download setup (Not verified)
 
@@ -223,11 +223,17 @@ This way of configuration consists to copy/paste exiting files in the system.
            cp etc /etc
 ## 5 - Utilisation
 
-Portail d'authentification 
+***Portail d'authentification***
 
-Type in the address bar of your browser the domain name concanate to the Squirrellmail path : `episen-sante.net/squirrelmail`
+- Type in the address bar of your browser the domain name concanate to the Squirrellmail path : `episen-sante.net/squirrelmail`
 
-Create an new email account
+***Create an new email account***
 
-add an new user : `adduser XX` (XX : new account name)
+- Add an new user : `sudo adduser XX` (XX : new account name)
 
+***Join a domain***
+- when to join :
+  - if you add an new host 
+  - if you restart the host (or `sudo service network-manager stop`)
+  
+- Follow the section `3.1 - DNS - Configure the DNS of the host`
