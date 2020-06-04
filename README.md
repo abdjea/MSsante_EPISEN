@@ -167,11 +167,16 @@ Ubuntu 16.04 is required to install the package "squirrelmail" using an Apt-base
 
 - `dpkg-reconfigure postfix`
        
-       Configuration type du serveur de messagerie :               Local uniquement (or Site Internet) ?
-       Nom de courrier :                                           mail.episen-sante.net ?
-       destinataire eds courriels de "root" et de "postmaster" :   mail.episen-sante.net, episen-sante.net
-       Réseaux internes :                                          192.168.0.0/24
-       Protocoles internet à utiliser :                            tous
+       Configuration type du serveur de messagerie                 :           Site Internet
+       Nom de courrier                                             :           episen-sante.net 
+       destinataire des courriels de "root" et de "postmaster"     :           mail.episen-sante.net, episen-sante.net
+       Autres destinations pour lesquelles le courier ser accepté  :           episen-sante.net
+       Faut-il forcer les mise à jour synchronisées de la file
+       d'attente des courriels                                     :           Non
+       Réseaux internes                                            :           192.168.0.0/24
+       Taille maximale des boites aux lettres                      :           0
+       Caractère d'extension des addresses locales                 :           (champ vide)
+       Protocoles internet à utiliser                              :           Tous
        
 
 - `nano /etc/postfix/main.cf`
