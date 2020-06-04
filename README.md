@@ -243,3 +243,8 @@ This way of configuration consists to copy/paste exiting files in the system.
   - if you restart the host (or `sudo service network-manager stop`)
   
 - Follow the section `3.1 - DNS - Configure the DNS of the host`
+
+## Authors
+
+***Abhishek DJEACHANDRANE** - *Initial work - Medical Informatics Engineer * - [abdjea](https://github.com/abdjea)
+***Anais Bechu** - *Initial work - e-Health firmware engineer * - [AnaisB29](https://github.com/AnaisB29)
