@@ -12,6 +12,7 @@ In this work , we have configured these following network components :
 | **DNS**  | Bind9 | :white_check_mark: |
 | **Mail Tranfert Agent**  | Postfix (SMTP)| :white_check_mark: |
 | **Mail Delevery Agent**  | Dovecot (IMAP, POP3) | :white_check_mark: |
+| **Web Server**  | Apache2 | :white_check_mark: |
 | **Mail User Agent**  | Squirrelmail | :white_check_mark: |
 
 
@@ -192,7 +193,7 @@ etudiant@ubuntu64:~$ sudo apt-get upgrade
 
 ### 3.3 - Mail Delivery Agent - Dovecot
 
-- `sudo nano /etc/dovecot.conf`
+- `sudo nano /etc/dovecot/dovecot.conf`
 
       # add the following line at the end of the file 
       protocols = imap pop3
